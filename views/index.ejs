@@ -1,0 +1,120 @@
+<!DOCTYPE html><html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Libre+Baskerville&family=Montserrat:wght@400;700&family=Roboto:wght@300&family=Rubik+Iso&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+
+     <style>
+        
+           body{
+            background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            font-family: Roboto;
+           }
+        
+        .header{
+         display: flex;
+         height: 100px;
+         font-family: Roboto;
+         color: blue;
+         justify-content: center;
+         align-items: center;
+        }
+        .joke-type{
+            display: flex;
+            flex-direction: column;
+           
+            height: 300px;
+            font-size: 16px;
+        }
+      .title{
+        font-family: Roboto;
+      }
+      .title2{
+        font-family: Roboto;
+      }
+        .form{
+            font-size: 30px;
+        }
+        input{
+            height: 40px;
+            background-color: rgb(15, 128, 249);
+            border-radius: 20px;
+            width: 60px;
+        }
+        .joke-generated{
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            
+        }
+       
+        .your-joke{
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: rgb(16, 15, 16);
+        }
+        .your-joke:hover {
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+                0 3px 0 #ccc, 0 4px 0 #ccc,
+                0 5px 0 #ccc, 0 6px 0 #ccc,
+                0 7px 0 #ccc, 0 8px 0 #ccc,
+                0 9px 0 #ccc, 0 10px 0 #ccc,
+                0 11px 0 #ccc, 0 12px 0 #ccc,
+                0 20px 30px rgba(0, 0, 0, 0.5);
+        }
+        a.refresh-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+     </style>
+    </head>
+    <body style=" background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);">
+        <div class="header">
+          <h1>JokeBuilder</h1>
+        </div>
+        <hr/>
+        <div class="joke-type">
+        <div class="title"><h1>Create Your Joke</h1></div>
+         <div class="form">
+            <form action="/joke-post" method="post">
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                  <option value="misc">Misc</option>
+                  <option value="programming">Programming</option>
+                  <option value="dark">Dark</option>
+                  <option value="pun">Pun</option>
+                  <option value="spooky">Spooky</option>
+                  <option value="christmas">Christmas</option>
+                  <option value="any">Any</option>
+                </select>
+                <br><br>
+                <label for="type">Type:</label>
+                <select name="type" id="type">
+                  <option value="single">Single</option>
+                  <option value="twopart">Twopart</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+              </form>
+         </div>
+        </div>
+        <hr/>
+        <div class="joke-generated">
+          <div class="title2"><h1>Your Generated Joke is </h1></div> 
+          <div class="your-joke"><%= content %></div> 
+        </div>
+        <div>
+            <li><a href="/clear">Refresh</a></li>
+        </div>
+    </body>
+</html>
